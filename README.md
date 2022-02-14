@@ -44,3 +44,19 @@ Check your default editor (i.e. by running `git config --global --edit`). If you
 ```console
 $ git config core.editor 'code --wait'
 ```
+
+## Understanding git
+
+Create a local file/folder:
+
+```console
+$ mkdir folder;
+$ for d in {1..6}; do echo  "Line ${d}" >> folder/file.txt; done;
+```
+Check the HASH of the file:
+
+```
+$ git hash-object folder/file.txt
+```
+
+

@@ -59,4 +59,64 @@ Check the HASH of the file:
 $ git hash-object folder/file.txt
 ```
 
+<details>
+  <summary>Important commands for this exercise:</summary>
+
+```
+$ git init
+$ git add
+$ git commit
+$ git ls-tree
+$ git cat-file [-p | -t]
+$ cat
+```
+</details>
+  
+The commit tree:
+  
+```mermaid
+graph RL;
+    96a85==>49c01;
+    96a85==>7e536;
+    1e542==>7e536;
+    b7e6b==>1e542;
+    main-.->b7e6b;
+    HEAD-->main;
+    5a053==>7e536;
+    55805==>5a053;
+    branch-.->55805;
+    tag-.->55805;
+```
+
+A commit:
+```mermaid
+graph BT;
+    Tree==>Commit;
+    Blob==>Tree;
+    Blob2==>Tree;
+    Tree2==>Tree;
+    Blob3==>Tree2;
+    Blob4==>Tree2;
+    Tree3==>Tree2;
+    Blob5==>Tree3;
+```
+
+```mermaid
+gitGraph:
+options
+{
+    "nodeSpacing": 150,
+    "nodeRadius": 10
+}
+end
+commit
+branch newbranch
+checkout newbranch
+commit
+commit
+checkout master
+commit
+commit
+merge newbranch
+```
 

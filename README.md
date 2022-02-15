@@ -72,7 +72,7 @@ $ cat
 ```
 </details>
   
-The commit tree:
+The commit tree (DAG):
   
 ```mermaid
 graph RL;
@@ -89,6 +89,7 @@ graph RL;
 ```
 
 A commit:
+
 ```mermaid
 graph BT;
     Tree==>Commit;
@@ -100,6 +101,18 @@ graph BT;
     Tree3==>Tree2;
     Blob5==>Tree3;
 ```
+
+Working with patches:
+
+```console
+$ git diff
+$ git format-patch HEAD~2..HEAD
+$ git reset --hard HEAD~2
+$ git apply
+$ git am
+```
+
+## Working with your history
 
 ```mermaid
 gitGraph:
@@ -120,3 +133,11 @@ commit
 merge newbranch
 ```
 
+```console
+$ git restore
+$ git commit --amend
+$ git reset [--hard | --soft | --mixed]
+$ git reflog
+$ git cherry-pick
+$ git rebase [-i]
+```

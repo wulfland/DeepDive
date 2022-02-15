@@ -77,7 +77,7 @@ The commit tree (DAG):
 ```mermaid
 graph RL;
     96a85==>49c01;
-    96a85==>7e536;
+    7e536==>96a85;
     1e542==>7e536;
     b7e6b==>1e542;
     main-.->b7e6b;

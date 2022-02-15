@@ -139,5 +139,6 @@ $ git commit --amend
 $ git reset [--hard | --soft | --mixed]
 $ git reflog
 $ git cherry-pick
+$ git merge [--squash | --rebase]
 $ git rebase [-i]
 ```

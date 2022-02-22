@@ -143,6 +143,11 @@ commit
 merge newbranch
 ```
 
+```console
+$ git log --oneline --graph --decorate --all
+$ git config --global alias.lol 'log --oneline --graph --decorate --all'
+```
+
 <details>
   <summary>Important commands for this exercise:</summary>
   

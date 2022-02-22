@@ -143,7 +143,6 @@ merge newbranch
 ```
 
 ```console
-$ git restore
 $ git commit --amend
 $ git reset [--hard | --soft | --mixed]
 $ git reflog

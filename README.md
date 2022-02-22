@@ -45,7 +45,7 @@ Check your default editor (i.e. by running `git config --global --edit`). If you
 $ git config core.editor 'code --wait'
 ```
 
-## Practice 1: Understanding git
+## Exercise 1: Understanding git
 
 ### Set-up:
 Create a local file/folder:
@@ -56,6 +56,12 @@ $ cd UnderstandingGit
 $ mkdir folder;
 $ for d in {1..6}; do echo  "Line ${d}" >> folder/file.txt; done;
 ```
+
+1. Modify the file and verify its SHA value (`git hash-object`)
+2. Initialize the git repo (`git init`) and check the changes in your folder.
+3. Add file to index (`git add`).
+4. Commit file and check in your `.git` folder what a commit is (`git cat-file` and `git ls-tree`).
+5. Add another commit and verify how the two commits are connected.
 
 <details>
   <summary>Important commands for this exercise:</summary>
@@ -103,14 +109,25 @@ graph RL;
 
 Working with patches:
 
-```console
-$ git diff
-$ git format-patch HEAD~2..HEAD
-$ git reset --hard HEAD~2
-$ git apply
-$ git am
-```
+1. Check how git generates diffs (`git diff`).
+2. Create patches for your two commits (`git format-patch`).
+3. Undo your changes (`git reset`).
+4. Apply the patches (`git apply` and `git am`).
 
+
+<details>
+  <summary>Important commands for this exercise:</summary>
+
+  ```console
+  $ git diff
+  $ git format-patch HEAD~2..HEAD
+  $ git reset --hard HEAD~2
+  $ git apply
+  $ git am
+  ```
+  
+</details>
+  
 ## Practice 2: Working with your history
 
 ### Set-up:

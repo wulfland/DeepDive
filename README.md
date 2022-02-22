@@ -64,6 +64,7 @@ $ for d in {1..6}; do echo  "Line ${d}" >> folder/file.txt; done;
 3. Add file to index (`git add`).
 4. Commit file and check in your `.git` folder what a commit is (`git cat-file` and `git ls-tree`).
 5. Add another commit and verify how the two commits are connected.
+6. Create a sinple tag and an annotated tag (`git tag` and `git tag -a`).
 
 <details>
   <summary>Important commands for this exercise:</summary>
@@ -76,6 +77,7 @@ $ git commit
 $ git ls-tree
 $ git cat-file [-p | -t]
 $ cat
+$ git tag [-a]
 ```
 </details>
   
@@ -172,7 +174,7 @@ $ git config --global alias.lol 'log --oneline --graph --decorate --all'
   
 </details>
 
-## Practice 3: Finding bugs and adding patches
+## Exercise 3: Branches, tags, finding bugs, and adding patches
 
 ### Set-up:
 
@@ -181,15 +183,32 @@ $ git clone https://github.com/wulfland/DeepDive.git DeepDive
 $ cd DeepDive
 ```
 
+### Exercise
+
+1. Create a branch `fix-bug` to fix the bug (`git switch -c`)
+2. Switch to `main` and search in the history for the bug (`inde.html` instead of `index.html`) using `git bisect`.
+3. Modify Readme.md and commit to `main`.
+4. Switch to `fix-bug` and rename `inde.html` to `index.html`.
+5. Rebase the branch onto main. 
+6. Create a branch `slow-down`.
+7. Modify line 9 of index.html and change the background URL to images/texture.jpg.
+8. Modify line 78 of index.html and change the timing for the game to speed it up or slow it down.
+9. Move `texture.jpg` to a new folder `images`.
+10. Create seperate commits for refactoring and logic changes (`git add -p`).
+11. Squash the changes into `main`
+
+
 <details>
   <summary>Important commands for this exercise:</summary>
   
   ```console
+  $ git switch [-c]
   $ git bisect start 
   $ git bisect good <SHA>
   $ git bisect bad <SHA>
   $ git bisect start <GOOD> <BAD>
   $ git bisect run ls index.html
   $ git add -p
+  $ git merge [--squash | --rebase]
   ```
 </details>

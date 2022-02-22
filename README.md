@@ -45,8 +45,9 @@ Check your default editor (i.e. by running `git config --global --edit`). If you
 $ git config core.editor 'code --wait'
 ```
 
-## Understanding git
+## Practice 1: Understanding git
 
+### Set-up:
 Create a local file/folder:
 
 ```console
@@ -55,16 +56,12 @@ $ cd UnderstandingGit
 $ mkdir folder;
 $ for d in {1..6}; do echo  "Line ${d}" >> folder/file.txt; done;
 ```
-Check the HASH of the file:
-
-```
-$ git hash-object folder/file.txt
-```
 
 <details>
   <summary>Important commands for this exercise:</summary>
 
 ```
+$ git hash-object folder/file.txt
 $ git init
 $ git add
 $ git commit
@@ -74,7 +71,21 @@ $ cat
 ```
 </details>
   
-The commit tree (DAG):
+A commit is a tree of blobs and trees:
+
+```mermaid
+graph BT;
+    Tree==>Commit;
+    Blob==>Tree;
+    Blob2==>Tree;
+    Tree2==>Tree;
+    Blob3==>Tree2;
+    Blob4==>Tree2;
+    Tree3==>Tree2;
+    Blob5==>Tree3;
+```
+  
+The commits are connected to their parent commits (DAG):
   
 ```mermaid
 graph RL;
@@ -90,20 +101,6 @@ graph RL;
     tag-.->55805;
 ```
 
-A commit:
-
-```mermaid
-graph BT;
-    Tree==>Commit;
-    Blob==>Tree;
-    Blob2==>Tree;
-    Tree2==>Tree;
-    Blob3==>Tree2;
-    Blob4==>Tree2;
-    Tree3==>Tree2;
-    Blob5==>Tree3;
-```
-
 Working with patches:
 
 ```console
@@ -114,15 +111,17 @@ $ git apply
 $ git am
 ```
 
-## Working with your history
+## Practice 2: Working with your history
+
+### Set-up:
 
 Create a local history:
 
 ```console
-mkdir WorkingWithYourHistory
-cd WorkingWithYourHistory
-git init
-for d in {1..6}; do touch "file${d}.md"; git add "file${d}.md"; git commit -m "adding file ${d}"; done
+$ mkdir WorkingWithYourHistory
+$ cd WorkingWithYourHistory
+$ git init
+$ for d in {1..6}; do touch "file${d}.md"; git add "file${d}.md"; git commit -m "adding file ${d}"; done
 ```
 
 ```mermaid
@@ -144,11 +143,38 @@ commit
 merge newbranch
 ```
 
+<details>
+  <summary>Important commands for this exercise:</summary>
+  
+  ```console
+  $ git commit --amend
+  $ git reset [--hard | --soft | --mixed]
+  $ git reflog
+  $ git cherry-pick
+  $ git merge [--squash | --rebase]
+  $ git rebase [-i]
+  ```
+  
+</details>
+
+## Practice 3: Finding bugs and adding patches
+
+### Set-up:
+
 ```console
-$ git commit --amend
-$ git reset [--hard | --soft | --mixed]
-$ git reflog
-$ git cherry-pick
-$ git merge [--squash | --rebase]
-$ git rebase [-i]
+$ git clone https://github.com/wulfland/DeepDive.git DeepDive
+$ cd DeepDive
 ```
+
+<details>
+  <summary>Important commands for this exercise:</summary>
+  
+  ```console
+  $ git bisect start 
+  $ git bisect good <SHA>
+  $ git bisect bad <SHA>
+  $ git bisect start <GOOD> <BAD>
+  $ git bisect run ls index.html
+  $ git add -p
+  ```
+</details>

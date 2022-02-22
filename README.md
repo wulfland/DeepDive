@@ -50,6 +50,8 @@ $ git config core.editor 'code --wait'
 Create a local file/folder:
 
 ```console
+$ mkdir UnderstandingGit
+$ cd UnderstandingGit
 $ mkdir folder;
 $ for d in {1..6}; do echo  "Line ${d}" >> folder/file.txt; done;
 ```

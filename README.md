@@ -57,6 +57,8 @@ $ mkdir folder;
 $ for d in {1..6}; do echo  "Line ${d}" >> folder/file.txt; done;
 ```
 
+### Exercise
+
 1. Modify the file and verify its SHA value (`git hash-object`)
 2. Initialize the git repo (`git init`) and check the changes in your folder.
 3. Add file to index (`git add`).
@@ -128,7 +130,7 @@ Working with patches:
   
 </details>
   
-## Practice 2: Working with your history
+## Exercise 2: Working with your local history
 
 ### Set-up:
 
@@ -141,29 +143,21 @@ $ git init
 $ for d in {1..6}; do touch "file${d}.md"; git add "file${d}.md"; git commit -m "adding file ${d}"; done
 ```
 
-```mermaid
-gitGraph:
-options
-{
-    "nodeSpacing": 150,
-    "nodeRadius": 10
-}
-end
-commit
-branch newbranch
-checkout newbranch
-commit
-commit
-checkout master
-commit
-commit
-merge newbranch
-```
+Look at you history. Create a git alias so that you don't have to type the long command all the time.
 
 ```console
 $ git log --oneline --graph --decorate --all
 $ git config --global alias.lol 'log --oneline --graph --decorate --all'
 ```
+
+### Exercise
+
+1. Add another file (`File7.md`) and ammend it to te last commit.
+2. Reset the last two commits and commit them together as a new commit (`git reset --soft`).
+3. Reset the last commit and create tree commits out of it (`git reset --mixed`).
+4. Undo the last three commit (`git reset --hard`).
+5. Cherry pick the changes from the reflog.
+6. Do an interactive rebase. Reword commit 2 and edit commit 3. 
 
 <details>
   <summary>Important commands for this exercise:</summary>
@@ -173,7 +167,6 @@ $ git config --global alias.lol 'log --oneline --graph --decorate --all'
   $ git reset [--hard | --soft | --mixed]
   $ git reflog
   $ git cherry-pick
-  $ git merge [--squash | --rebase]
   $ git rebase [-i]
   ```
   

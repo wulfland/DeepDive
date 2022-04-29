@@ -51,10 +51,10 @@ $ git config core.editor 'code --wait'
 Create a local file/folder:
 
 ```console
-$ mkdir UnderstandingGit
-$ cd UnderstandingGit
-$ mkdir folder;
-$ for d in {1..6}; do echo  "Line ${d}" >> folder/file.txt; done;
+mkdir UnderstandingGit
+cd UnderstandingGit
+mkdir folder;
+for d in {1..6}; do echo  "Line ${d}" >> folder/file.txt; done;
 ```
 
 ### Exercise
@@ -132,7 +132,46 @@ Working with patches:
   
 </details>
   
-## Exercise 2: Working with your local history
+## Exercise 2: Merge conflicts
+
+### Set-up
+
+```console
+echo "Solving merge conflicts in git is easy" > Merge.txt
+git add Merge.txt
+git commit -m "Base commit"
+git switch -c experiment
+echo "Solving merge conflicts is easy in git" > Merge.txt
+git commit -am "Modify Merge.txt in experiment"
+git switch main
+echo "Solving merge conflicts in git is very easy" > Merge.txt
+git commit -am "Modify Merge.txt in main"
+git switch experiment
+```
+
+### Exercise
+
+Create a merge conflict with `git merge main` and resolve it.
+
+<details>
+  <summary>Important commands for this exercise:</summary>
+  
+  ```console
+  $ git config --global merge.conflictStyle diff3![image](https://user-images.githubusercontent.com/5276337/165906438-ac62ab75-882c-4844-8117-d9337b17635a.png)
+  $ git merge --abort
+  $ git diff
+  $ git log --merge –p <filename>
+  $ git show :1:<filename> (common anchestor)
+  $ git show :2:<filename> (HEAD)
+  $ git show :3:<filename> (MERGE_HEAD)
+
+  $ git add <filename>
+  $ git merge --continue
+  ```
+  
+</details>
+
+## Exercise 3: Working with your local history
 
 ### Set-up:
 

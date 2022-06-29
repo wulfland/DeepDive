@@ -177,10 +177,10 @@ Create a merge conflict with `git merge main` and resolve it.
 Create a local history:
 
 ```console
-$ mkdir WorkingWithYourHistory
-$ cd WorkingWithYourHistory
-$ git init
-$ for d in {1..6}; do touch "file${d}.md"; git add "file${d}.md"; git commit -m "adding file ${d}"; done
+mkdir WorkingWithYourHistory
+cd WorkingWithYourHistory
+git init
+for d in {1..6}; do touch "file${d}.md"; git add "file${d}.md"; git commit -m "adding file ${d}"; done
 ```
 
 Look at you history. Create a git alias so that you don't have to type the long command all the time.

@@ -152,12 +152,11 @@ git switch experiment
 ### Exercise
 
 Create a merge conflict with `git merge main` and resolve it.
-
 <details>
   <summary>Important commands for this exercise:</summary>
   
   ```console
-  $ git config --global merge.conflictStyle diff3![image](https://user-images.githubusercontent.com/5276337/165906438-ac62ab75-882c-4844-8117-d9337b17635a.png)
+  $ git config --global merge.conflictStyle diff3
   $ git merge --abort
   $ git diff
   $ git log --merge –p <filename>

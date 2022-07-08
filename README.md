@@ -42,7 +42,7 @@ $ git config --global init.defaultBranch main
 Check your default editor (i.e. by running `git config --global --edit`). If you like the editor, then you are good. If your stuck in vim (click <kbd>ESC</kbd> <kbd>:</kbd> <kbd>q</kbd> <kbd>!</kbd> <kbd>Enter</kbd> to exit), then configure the editor of your choice - for example CSCode:
 
 ```console
-$ git config core.editor 'code --wait'
+$ git config --global core.editor 'code --wait'
 ```
 
 ## Exercise 1: Understanding git
@@ -55,6 +55,14 @@ mkdir UnderstandingGit
 cd UnderstandingGit
 mkdir folder;
 for d in {1..6}; do echo  "Line ${d}" >> folder/file.txt; done;
+```
+Powershell:
+```console
+mkdir UnderstandingGit
+cd UnderstandingGit
+mkdir folder
+for ($d=1; $d -le 6; $d++) { Out-File file$d.md; git add file$d.md; git commit -m "adding file$d.md"; }
+
 ```
 
 ### Exercise

@@ -202,7 +202,7 @@ $ git config --global alias.lol 'log --oneline --graph --decorate --all'
 
 1. Add another file (`File7.md`) and ammend it to te last commit.
 2. Reset the last two commits and commit them together as a new commit (`git reset --soft`).
-3. Reset the last commit and create tree commits out of it (`git reset --mixed`).
+3. Reset the last commit and create three commits out of it (`git reset --mixed`).
 4. Undo the last three commit (`git reset --hard`).
 5. Cherry pick the changes from the reflog.
 6. Do an interactive rebase. Reword commit 2 and edit commit 3. 

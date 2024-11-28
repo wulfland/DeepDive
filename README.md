@@ -61,7 +61,7 @@ Powershell:
 mkdir UnderstandingGit
 cd UnderstandingGit
 mkdir folder
-for ($d=1; $d -le 6; $d++) { Out-File file$d.md; git add file$d.md; git commit -m "adding file$d.md"; }
+for ($d=1; $d -le 6; $d++) { $d >> folder\file.txt }
 
 ```
 

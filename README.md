@@ -168,7 +168,7 @@ Create a merge conflict with `git merge main` and resolve it.
   $ git merge --abort
   $ git diff
   $ git log --merge –p <filename>
-  $ git show :1:<filename> (common anchestor)
+  $ git show :1:<filename> (common ancestor)
   $ git show :2:<filename> (HEAD)
   $ git show :3:<filename> (MERGE_HEAD)
 

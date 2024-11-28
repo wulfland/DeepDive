@@ -119,7 +119,7 @@ graph RL;
     tag-.->55805;
 ```
 
-Working with patches:
+## Exercise 2: Working with patches:
 
 1. Check how git generates diffs (`git diff`).
 2. Create patches for your two commits (`git format-patch`).
@@ -140,7 +140,7 @@ Working with patches:
   
 </details>
   
-## Exercise 2: Merge conflicts
+## Exercise 3: Merge conflicts
 
 ### Set-up
 
@@ -178,7 +178,7 @@ Create a merge conflict with `git merge main` and resolve it.
   
 </details>
 
-## Exercise 3: Working with your local history
+## Exercise 4: Working with your local history
 
 ### Set-up:
 
@@ -220,7 +220,7 @@ $ git config --global alias.lol 'log --oneline --graph --decorate --all'
   
 </details>
 
-## Exercise 3: Branches, tags, finding bugs, and adding patches
+## Exercise 5: Branches, tags, finding bugs, and adding patches
 
 ### Set-up:
 

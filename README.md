@@ -61,7 +61,7 @@ Powershell:
 mkdir UnderstandingGit
 cd UnderstandingGit
 mkdir folder
-for ($d=1; $d -le 6; $d++) { $d >> folder\file.txt }
+for ($d=1; $d -le 6; $d++) { "Line $d" >> folder\file.txt }
 
 ```
 
